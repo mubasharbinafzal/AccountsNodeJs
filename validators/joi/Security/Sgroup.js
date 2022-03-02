@@ -12,12 +12,10 @@ const schemas = {
     if (error) { 
       const { details } = error;
       const message = details.map((i) => i.message).join(","); 
-      console.log(message);
-      //throw new CustomError(message, 400);
+      throw new CustomError(message,400);
     }
     return value;
   },
  
 };
-
 module.exports = schemas;
