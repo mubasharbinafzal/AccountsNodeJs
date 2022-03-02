@@ -15,7 +15,7 @@ const app = express();
 require("./middlewares/pre-route")(app);
 
 // API routes
-// app.use("/api", require("./routes"));
+app.use("/api", require("./routes"));
 
 // Ping route for testing connection
 app.get("/ping", (req, res) => res.status(200).send("Hello world!"));
@@ -45,3 +45,4 @@ cron.schedule("01 01 * * *", () => {
   new Cronjobs();
   console.log("Corn is Running", new Date());
 });
+
