@@ -1,8 +1,13 @@
 module.exports = {
-  ERRORS: { 
+  ERRORS: {
+    "NOTFOUND": "Record NOT Found", 
+    "NOTUPDATE": "Update Error"
   },
   TEXTS: {
     SgroupCreated: "Group Is Created Successfully",
+    GetAllSgroup: "Get All Groups",
+    GetOneSgroup: "Get All Groups",
+    SgroupDeleted: "Group Is Deleted Successfully",
   },
   QUOTEREDIRECT: "http://localhost:5000/api/v1/client/",
   ROLES: {
@@ -12,46 +17,6 @@ module.exports = {
     ADMINISTRATOR: "Administrator",
     MASTER:"Master",
     USER : "User"
-     
-  },
-  INVOICETYPES: {
-    
-  },
-  LEVELTYPE: {
-     
-  },
-  LOCATIONTYPE: {
-     
-  },
-  MEANTYPES: {
-    
-  },
-  CONTRACTTYPES: {
-    
-  },
-  COMPANYTYPE: {
-    
-  },
-  FUNCTIONALITY: {
-     
-  },
-  INCIDENTTYPE: {
-     
-  },
-  INCIDENTSTATUS: {
-    OPEN: "OPEN",
-    CLOSED: "CLOSED",
-  },
-  SITEPENALTY: {
-     
-  },
-  MEANLOCATIONTYPE: {
-     
-  },
-  ORGANIGRAMMETYPE: {
-    
-  },
-  STORAGEAREAREQUESTSTATUS: {
      
   },
   MODALS: {
