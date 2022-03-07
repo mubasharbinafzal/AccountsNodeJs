@@ -1,7 +1,8 @@
 module.exports = {
   ERRORS: {
     "NOTFOUND": "Record NOT Found", 
-    "NOTUPDATE": "Update Error"
+    "NOTUPDATE": "Update Error",
+    "ONLYUNIQUE": "Field Must Be Unique"
   },
   TEXTS: {
     SgroupCreated: "Group Is Created Successfully",
