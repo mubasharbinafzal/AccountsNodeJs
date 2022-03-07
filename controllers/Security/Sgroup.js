@@ -43,7 +43,7 @@ class SgroupController {
         { $set: validatedData },
         { new: true }
       );
-    if(!result) throw res.status(422).send(STRINGS.TEXTS.NOTUPDATE); 
+    if(!result) throw res.status(422).send(STRINGS.ERRORS.NOTUPDATE);  
    res.status(200).send(response(STRINGS.TEXTS.SgroupCreated, result));
    }
 }
