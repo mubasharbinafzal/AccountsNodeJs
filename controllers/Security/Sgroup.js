@@ -55,7 +55,7 @@ class SgroupController {
         { new: true }
       );
     if(!result) throw res.status(422).send(STRINGS.ERRORS.NOTUPDATE);  
-   res.status(200).send(response(STRINGS.TEXTS.SgroupCreated, result));
+   res.status(200).send(response(STRINGS.TEXTS.SgroupUpate, result));
    }
 }
 

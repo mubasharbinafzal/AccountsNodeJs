@@ -6,9 +6,16 @@ module.exports = {
   },
   TEXTS: {
     SgroupCreated: "Group Is Created Successfully",
+    SgroupUpate: "Group Is Update Successfully",
     GetAllSgroup: "Get All Groups",
-    GetOneSgroup: "Get All Groups",
+    GetOneSgroup: "Get Group",
     SgroupDeleted: "Group Is Deleted Successfully",
+    
+    SUserCreated: "User Is Created Successfully",
+    SUserUpdate: "User Is Update Successfully",
+    GetAllSUser: "Get All User",
+    GetOneSUser: "Get User",
+    SUserDeleted: "User Is Deleted Successfully",
   },
   QUOTEREDIRECT: "http://localhost:5000/api/v1/client/",
   ROLES: {
