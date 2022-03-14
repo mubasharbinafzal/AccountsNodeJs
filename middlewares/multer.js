@@ -41,7 +41,7 @@ async function addPathToBody(req, res, next) {
       req.body["images"] = files;
     }
   }
-  if (req.file) req.body["image"] = req.file.path.replace(/\\/g, "/");
+  if (req.file) req.body[req.file.fieldname] = req.file.path.replace(/\\/g, "/");
   next();
 }
 

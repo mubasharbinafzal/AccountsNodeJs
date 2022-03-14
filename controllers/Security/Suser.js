@@ -5,24 +5,23 @@ const Suser = require("../../models/Security/Suser");
 const CustomError = require("../../utils/customError");
 
 class SuserController {
-  async create(req, res) {   
-    // validation 
-   const validatedData = Validations.Suser.validate(req.body);
+  async create (req, res) { 
+   const validatedData = Validations.suser.validate(req.body);
    if (validatedData.error) throw res.status(422).send(validatedData);
-   // save In Db 
+  //  // save In Db 
    const result = await new Suser(validatedData).save();
-   if (!result) throw  res.status(422).send(result);
-   res.status(200).send(response(STRINGS.TEXTS.SUserCreated, result));
+   if (!result) throw res.status(422).send(result);
+  res.status(200).send(response(STRINGS.TEXTS.SUserCreated, result));
   }
 
-  async getAll(req, res) {   
+  async getAll (req, res) {   
    //Find all
     const result = await Suser.find({}, { __v: 0 }); 
 
    res.status(200).send(response(STRINGS.TEXTS.GetAllSUser, result));
    }
 
-   async getOne(req, res) {
+   async getOne (req, res) {
     const id = req.params.id;
     // findOne 
     const result = await Suser.findOne({ _id: id }, { __v: 0 });
@@ -30,14 +29,14 @@ class SuserController {
 
     res.status(200).send(response(STRINGS.TEXTS.GetOneSUser, result));
   }
-  async delete(req, res) {
+  async delete (req, res) {
     const id = req.params.id;
     // delete
     const result = await Suser.findByIdAndDelete(id);
 
     res.status(200).send(response(STRINGS.TEXTS.SUserDeleted , result));
   }
-  async Update(req, res) {   
+  async Update (req, res) {   
     const id = req.params.id;
     // validation 
     const validatedData = Validations.Suser.validate(req.body); 

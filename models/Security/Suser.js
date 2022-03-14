@@ -16,7 +16,7 @@ const SuserSchema = new Schema(
         default: STRINGS.STATUS.USER,
       },
     userPassw : String,
-    userSnap: String,
+    userSnap: String, 
     userIsActive: {
       type: Boolean, 
       default: true,
