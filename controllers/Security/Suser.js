@@ -39,7 +39,8 @@ class SuserController {
   async Update (req, res) {   
     const id = req.params.id;
     // validation 
-    const validatedData = Validations.Suser.validate(req.body); 
+    console.log(req.body);
+    const validatedData = Validations.suser.validate(req.body);
     if (validatedData.error) throw res.status(422).send(validatedData);  
     // findAndUpdate
     const result = await Suser.findByIdAndUpdate(

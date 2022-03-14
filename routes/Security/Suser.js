@@ -7,6 +7,6 @@ router.post("/", upload("Suser", "userSnap"), SuserController.create);
 router.get("/", SuserController.getAll);
 router.get("/:id", SuserController.getOne);
 router.delete("/:id", SuserController.delete);
-router.put("/:id", SuserController.Update);
+router.put("/:id",  upload("Suser", "userSnap"),  SuserController.Update);
 
 module.exports = router;
