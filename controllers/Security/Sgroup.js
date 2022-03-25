@@ -11,7 +11,7 @@ class SgroupController {
    if (validatedData.error) throw res.status(422).send(validatedData);
    // check unique
    const uniqueGroup = await Sgroup.findOne({grpTitle: validatedData.grpTitle});
-   if(uniqueGroup) throw res.status(422).send(STRINGS.ERRORS.ONLYUNIQUE);
+   if(uniqueGroup) throw res.status(422).send(response(STRINGS.ERRORS.ONLYUNIQUE,uniqueGroup,false));
    // save In Db 
    const result = await new Sgroup(validatedData).save(); 
    if (!result) throw  res.status(422).send(result);

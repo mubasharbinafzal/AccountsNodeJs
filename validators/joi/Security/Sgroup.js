@@ -5,8 +5,7 @@ const CustomError = require("../../../utils/customError");
 const schemas = {
     validate: (data) => {
     const Validation = Joi.object().keys({ 
-        grpTitle: Joi.string().min(3).max(25).required().label('Group Title')  
-       
+        grpTitle: Joi.string().min(3).max(25).required().label('Group Title')
     }); 
     const { error, value } = Validation.validate(data); 
     if (error) { 
@@ -20,7 +19,6 @@ const schemas = {
     }
     return value;
   },
- 
 };
 
 module.exports = schemas;
