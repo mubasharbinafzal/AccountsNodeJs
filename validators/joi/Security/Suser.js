@@ -8,6 +8,7 @@ const schemas = {
       grpId: Joi.string().required(),
       userName:Joi.string().min(3).max(25).required(),
       userPassw:Joi.string().min(3).max(15).required(), 
+      userCPassw:Joi.string().min(3).max(15).required(), 
       userType:Joi.string().optional(),
       userSnap: Joi.string().optional().allow(''),
     });
