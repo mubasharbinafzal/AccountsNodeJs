@@ -16,7 +16,7 @@ class SuserController {
 
   async getAll (req, res) {   
    //Find all
-    const result = await Suser.find({}, { __v: 0 }).populate("grpId"); 
+    const result = await Suser.find({}, { __v: 0 }).populate("grpId","grpTitle"); 
 
    res.status(200).send(response(STRINGS.TEXTS.GetAllSUser, result));
    }
@@ -24,7 +24,7 @@ class SuserController {
    async getOne (req, res) {
     const id = req.params.id;
     // findOne 
-    const result = await Suser.findOne({ _id: id }, { __v: 0 }).populate("grpId"); 
+    const result = await Suser.findOne({ _id: id }, { __v: 0 }).populate("grpId","grpTitle"); 
     if (!result) throw new CustomError(STRINGS.ERRORS.NOTFOUND);
 
     res.status(200).send(response(STRINGS.TEXTS.GetOneSUser, result));
@@ -39,7 +39,7 @@ class SuserController {
   async Update (req, res) {   
     const id = req.params.id;
     // validation 
-    const validatedData = Validations.suser.validate(req.body);
+    const validatedData = Validations.suser.update(req.body);
     if (validatedData.error) throw res.status(422).send(validatedData);  
     // findAndUpdate
     const result = await Suser.findByIdAndUpdate(
